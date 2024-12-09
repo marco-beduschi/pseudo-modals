@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <title><%= content_for(:title) || "Pseudo Modals" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -23,7 +23,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="h-full">
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
