@@ -1,5 +1,5 @@
 class MealOrder < ApplicationRecord
-  belongs_to :burger
-  belongs_to :french_fry
-  belongs_to :drink
+  belongs_to :burger, optional: true
+  belongs_to :french_fry, optional: true
+  belongs_to :drink, optional: true
 end
