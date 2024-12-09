@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_09_122018) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_09_122549) do
   create_table "burgers", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -35,5 +35,15 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_122018) do
   create_table "meal_orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "burger_id"
+    t.integer "french_fry_id"
+    t.integer "drink_id"
+    t.index ["burger_id"], name: "index_meal_orders_on_burger_id"
+    t.index ["drink_id"], name: "index_meal_orders_on_drink_id"
+    t.index ["french_fry_id"], name: "index_meal_orders_on_french_fry_id"
   end
+
+  add_foreign_key "meal_orders", "burgers"
+  add_foreign_key "meal_orders", "drinks"
+  add_foreign_key "meal_orders", "french_fries"
 end
