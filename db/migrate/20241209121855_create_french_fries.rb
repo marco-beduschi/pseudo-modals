@@ -1,8 +1,8 @@
 class CreateFrenchFries < ActiveRecord::Migration[8.0]
   def change
     create_table :french_fries do |t|
-      t.string :name
-      t.decimal :price
+      t.string :size, null: false
+      t.decimal :price, null: false
 
       t.timestamps
     end
