@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "meal_orders#new"
 
-  resources :meal_orders
+  resources :meal_orders do
+    resources :burgers
+    resources :french_fries
+    resources :drinks
+  end
 end

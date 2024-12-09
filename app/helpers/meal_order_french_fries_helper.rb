@@ -1,0 +1,2 @@
+module MealOrderFrenchFriesHelper
+end
