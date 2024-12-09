@@ -1,0 +1,2 @@
+class FrenchFry < ApplicationRecord
+end
