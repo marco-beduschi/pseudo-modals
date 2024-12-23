@@ -1,7 +1,7 @@
 <article
   class="
-    w-full bg-orange-50 p-4 rounded-lg rounded-b-none border-4 border-b-0
-    border-orange-400 overflow-clip self-end
+    w-full bg-white p-4 rounded-lg rounded-b-none border border-b-0
+    border-slate-200 overflow-clip self-end
   "
 >
   <section>
@@ -9,13 +9,13 @@
       <div class="flex flex-col gap-4">
         <div class="flex flex-col md:flex-row gap-2">
           <% Burger.all.each do |burger| %>
-            <label class="flex justify-between gap-2 items-center border-2 border-orange-200 rounded-md py-4 px-6 has-[:checked]:bg-orange-100 has-[:checked]:text-orange-900 has-[:checked]:border-orange-500">
+            <label class="flex justify-between gap-2 items-center border border-slate-200 rounded-md py-4 px-6 has-[:checked]:bg-lime-100 has-[:checked]:text-lime-900 has-[:checked]:border-lime-500">
               <%= burger.name %>
-              <%= f.radio_button :burger_id, burger.id, class: 'checked:bg-orange-400 checked:hover:bg-orange-400 checked:active:bg-orange-400 checked:focus:bg-orange-400 focus:bg-orange-400 focus:outline-none focus:ring-1 focus:ring-orange-400' %>
+              <%= f.radio_button :burger_id, burger.id, class: 'checked:bg-lime-400 checked:hover:bg-lime-400 checked:active:bg-lime-400 checked:focus:bg-lime-400 focus:bg-lime-400 focus:outline-none focus:ring-1 focus:ring-lime-400' %>
             </label>
           <% end %>
         </div>
-        <%= f.submit t('.submit', default: "Add to order"), class: 'bg-orange-400 px-2 py-4 w-full rounded-md' %>
+        <%= f.submit t('.submit', default: "Add to order"), class: 'bg-lime-400 px-2 py-4 w-full rounded-md' %>
       </div>
     <% end %>
   </section>
