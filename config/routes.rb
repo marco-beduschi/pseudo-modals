@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   root "meal_orders#new"
 
   resources :meal_orders do
-    resources :burgers
-    resources :french_fries
-    resources :drinks
+    resources :meal_order_burgers
+    resources :meal_order_french_fries
+    resources :meal_order_drinks
   end
 end
