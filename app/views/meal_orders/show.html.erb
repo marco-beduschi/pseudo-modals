@@ -1,6 +1,6 @@
 <article
   class="
-    w-full bg-slate-50 p-4 rounded-lg rounded-b-none border border-b-0
+    w-full bg-white p-4 rounded-lg rounded-b-none border border-b-0
     border-slate-200 overflow-clip self-end
   "
 >
@@ -12,56 +12,44 @@
     <section>
       <ul class="flex flex-col gap-2">
         <li class="">
-          <%= link_to(new_meal_order_meal_order_burger_path(meal_order_id: @meal_order.id), class: "flex flex-row items-center gap-2 bg-white px-6 py-4 rounded-md") do %>
-            <% if @meal_order.meal_order_burger.present? %>
-              <div
-                class="
-                  h-5 w-5 grid place-content-center shrink-0 border-2 border-lime-400
-                  text-lime-500 rounded-full
-                "
-              >✓</div>
-            <% else %>
-              <div
-                class="
-                  h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
-                  rounded-full
-                "
-              ></div>
-            <% end %>
+          <%= meal_order_step_link_to(
+                new_meal_order_meal_order_burger_path(meal_order_id: @meal_order.id),
+                completed: @meal_order.meal_order_burger.present?
+              ) do %>
             <span>Add a Burger</span>
           <% end %>
         </li>
         <li class="">
-          <a href="" class="flex flex-row items-center gap-2 bg-white px-6 py-4 rounded-md">
-            <div
-              class="
-                h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
-                rounded-full
-              "
-            ></div>
+          <a href="" class="flex justify-between gap-2 items-center border border-slate-200 rounded-md py-4 px-6 has-[:checked]:bg-lime-100 has-[:checked]:text-lime-900 has-[:checked]:border-lime-500">
             <span>Add some Fries</span>
-          </a>
-        </li>
-        <li class="">
-          <a href="" class="flex flex-row items-center gap-2 bg-white px-6 py-4 rounded-md">
             <div
               class="
                 h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
                 rounded-full
               "
             ></div>
+          </a>
+        </li>
+        <li class="">
+          <a href="" class="flex justify-between gap-2 items-center border border-slate-200 rounded-md py-4 px-6 has-[:checked]:bg-lime-100 has-[:checked]:text-lime-900 has-[:checked]:border-lime-500">
             <span>Add a Drink</span>
-          </a>
-        </li>
-        <li class="">
-          <a href="" class="flex flex-row items-center gap-2 bg-white px-6 py-4 rounded-md">
             <div
               class="
                 h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
                 rounded-full
               "
             ></div>
+          </a>
+        </li>
+        <li class="">
+          <a href="" class="flex justify-between gap-2 items-center border border-slate-200 rounded-md py-4 px-6 has-[:checked]:bg-lime-100 has-[:checked]:text-lime-900 has-[:checked]:border-lime-500">
             <span>Leave a tip</span>
+            <div
+              class="
+                h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
+                rounded-full
+              "
+            ></div>
           </a>
         </li>
       </ul>
