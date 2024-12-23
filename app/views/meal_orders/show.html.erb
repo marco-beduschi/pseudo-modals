@@ -13,12 +13,21 @@
       <ul class="flex flex-col gap-2">
         <li class="">
           <%= link_to(new_meal_order_meal_order_burger_path(meal_order_id: @meal_order.id), class: "flex flex-row items-center gap-2 bg-white p-2 rounded-md") do %>
-            <div
-              class="
-                h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
-                rounded-full
-              "
-            ></div>
+            <% if @meal_order.meal_order_burger.present? %>
+              <div
+                class="
+                  h-5 w-5 grid place-content-center shrink-0 border-2 border-lime-400
+                  text-lime-500 rounded-full
+                "
+              >✓</div>
+            <% else %>
+              <div
+                class="
+                  h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
+                  rounded-full
+                "
+              ></div>
+            <% end %>
             <span>Add a Burger</span>
           <% end %>
         </li>
