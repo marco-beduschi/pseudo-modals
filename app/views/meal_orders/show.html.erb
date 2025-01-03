@@ -12,11 +12,25 @@
     <section>
       <ul class="flex flex-col gap-2">
         <li class="">
-          <%= meal_order_step_link_to(
-                new_meal_order_meal_order_burger_path(meal_order_id: @meal_order.id),
-                completed: @meal_order.meal_order_burger.present?
-              ) do %>
-            <span>Add a Burger</span>
+          <% if @meal_order.meal_order_burger.present? %>
+            <div class="flex justify-between gap-2 items-center border border-lime-400 rounded-md py-4 px-6 has-[:checked]:bg-lime-100 has-[:checked]:text-lime-900 has-[:checked]:border-lime-500">
+              <span class="text-lime-500 font-bold">Add a Burger</span>
+              <div
+                class="
+                  h-5 w-5 grid place-content-center shrink-0 border-2 border-lime-400 text-lime-500 rounded-full
+                "
+              >✓</div>
+            </div>
+          <% else %>
+            <%= link_to(new_meal_order_meal_order_burger_path(meal_order_id: @meal_order.id), class: 'flex justify-between gap-2 items-center border border-slate-200 rounded-md py-4 px-6 has-[:checked]:bg-lime-100 has-[:checked]:text-lime-900 has-[:checked]:border-lime-500') do %>
+              <span>Add a Burger</span>
+              <div
+                class="
+                h-5 w-5 shrink-0 border-2 border-dashed border-slate-400
+                rounded-full
+              "
+              ></div>
+            <% end %>
           <% end %>
         </li>
         <li class="">
